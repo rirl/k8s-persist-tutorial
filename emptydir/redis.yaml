@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-sample-ed
+spec:
+  containers:
+  - name: redis-sample-ed
+    image: redis
+    volumeMounts:
+    - name: redis-storage-sample-ed
+      mountPath: /data/redis
+  volumes:
+  - name: redis-storage-sample-ed
+    emptyDir: {}
