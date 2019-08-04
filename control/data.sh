@@ -4,7 +4,7 @@ status=0
 
 echo "VERIFY   -- [$0]"
 set -x
-   kubectl get pod $1 --watch
+   kubectl exec -it $1 -- /bin/bash
    status=$?
 set +x 
 
