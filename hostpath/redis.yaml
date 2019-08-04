@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-sample-hp
+spec:
+  containers:
+  - name: redis-sample-hp
+    image: redis
+  - mountPath: /test-pd
+    name: redis-volume-hp
+  volumes:
+  - name: redis-volume-hp
+    hostPath:
+      # directory location on host
+      path: /opt/k8s-examples/storage/hostpath/data
+      type: Directory
