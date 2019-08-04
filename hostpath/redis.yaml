@@ -6,11 +6,13 @@ spec:
   containers:
   - name: redis-sample-hp
     image: redis
-  - mountPath: /test-pd
-    name: redis-volume-hp
+    volumeMounts:
+    - mountPath: /redis-hp
+      name: redis-volume-hp
   volumes:
   - name: redis-volume-hp
     hostPath:
       # directory location on host
-      path: /opt/k8s-examples/storage/hostpath/data
+      path: /opt/k8s-examples/storage/hostpath/data-redis
+      # this field is optional
       type: Directory
