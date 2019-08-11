@@ -15,4 +15,4 @@ spec:
       # directory location on host
       path: /opt/k8s-examples/storage/hostpath/data-redis
       # this field is optional
-      type: Directory
+      type: DirectoryOrCreate
